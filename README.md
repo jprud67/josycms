@@ -1,1 +1,3 @@
-# bidpli
+# Josycms
+
+php -S localhost:8000 -t public

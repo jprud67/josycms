@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+require_once join(DIRECTORY_SEPARATOR, [__DIR__,'..','vendor', 'autoload.php']);
+
+use Doctrine\ORM\Tools\Console\ConsoleRunner;
+
+$container = include join(DIRECTORY_SEPARATOR, [__DIR__, '..','content','modules','Josy','Container.php']);
+
+$em=$container->get('entity_manager')->em;
+
+$commands = [];
+
+$helperSet = ConsoleRunner::createHelperSet($em);
+
+ConsoleRunner::run($helperSet, $commands);

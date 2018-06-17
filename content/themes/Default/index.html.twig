@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+</head>
+<body>
+<h1>Products</h1>
+<a href="/new">Add Product</a>
+<div>
+    <ul>
+        {% for product in products %}
+            <li>
+                {{ product.name }}
+                <a href="/edit/{{ product.id }}">edit</a>
+                <a href="/delete/{{ product.id }}">delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
